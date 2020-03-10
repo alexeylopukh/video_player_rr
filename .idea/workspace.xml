@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1cce0073-fb0e-4d77-ba9a-49724edd4647" name="Default Changelist" comment="" />
+    <list default="true" id="1cce0073-fb0e-4d77-ba9a-49724edd4647" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/video_player.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/video_player.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/sub_rip_file_test.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/video_player_initialization_test.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/video_player_test.dart" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,6 +15,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3_XL_API_29" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1Ytf9umXlN3cdS3z9dE6lX9VuMy" />
   <component name="PropertiesComponent">
     <property name="dart.analysis.tool.window.force.activate" value="false" />
@@ -44,5 +53,16 @@
       <updated>1583766662826</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

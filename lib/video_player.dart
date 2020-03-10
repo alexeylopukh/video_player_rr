@@ -18,8 +18,8 @@ import 'src/closed_caption_file.dart';
 export 'src/closed_caption_file.dart';
 
 final VideoPlayerPlatform _videoPlayerPlatform = VideoPlayerPlatform.instance
-  // This will clear all open videos on the platform when a full restart is
-  // performed.
+// This will clear all open videos on the platform when a full restart is
+// performed.
   ..init();
 
 /// The duration, current position, buffering state, error state and settings
@@ -199,6 +199,14 @@ class VideoPlayerController extends ValueNotifier<VideoPlayerValue> {
 
   int _textureId;
 
+  bool _isBuffering = false;
+
+  bool get isBuffering => _isBuffering;
+  StreamController<bool> _bufferingStreamController =
+      StreamController.broadcast();
+
+  Stream<bool> get bufferingStream => _bufferingStreamController.stream;
+
   /// The URI to the video file. This will be in different formats depending on
   /// the [DataSourceType] of the original video.
   final String dataSource;
@@ -290,9 +298,13 @@ class VideoPlayerController extends ValueNotifier<VideoPlayerValue> {
           value = value.copyWith(buffered: event.buffered);
           break;
         case VideoEventType.bufferingStart:
+          _isBuffering = true;
+          _bufferingStreamController.add(_isBuffering);
           value = value.copyWith(isBuffering: true);
           break;
         case VideoEventType.bufferingEnd:
+          _isBuffering = false;
+          _bufferingStreamController.add(_isBuffering);
           value = value.copyWith(isBuffering: false);
           break;
         case VideoEventType.unknown:
@@ -334,6 +346,7 @@ class VideoPlayerController extends ValueNotifier<VideoPlayerValue> {
       }
       _lifeCycleObserver.dispose();
     }
+    _bufferingStreamController?.close();
     _isDisposed = true;
     super.dispose();
   }
